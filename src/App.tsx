@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import logo from './assets/Logo.svg'
+import { Notecard } from './components/note-card';
 
-function App() {
-  const [count, setCount] = useState(0)
+export function App() {
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="mx-auto max-w-6xl my-12 space-y-6">
+      <img src={logo} alt="NWL Expert" />
+      <form className="w-full">
+        <input type="text" placeholder='Busque em suas notas...' className="w-full bg-transparent text-3xl font-semibold tracking-tight outline-none placeholder:text-slate-500" />
+      </form>
+      <div className='h-px bg-slate-700' ></div>
+      <div className='grid grid-cols-3 gap-6 auto-rows-[250px]'>
+
+        <div className='rounded-md bg-slate-700 p-5 space-y-3 overflow-hidden relative'>
+          <span className='text-sm font-medium text-slate-200'>Adicionar nota</span>
+          <p className='text-sm leading-6 text-slate-400'>Grave uma nota em áudio que será convertida para texto automaticamente</p>
+        </div>
+       <Notecard/>
+       <Notecard/>
+       <Notecard/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+
+  );
 }
 
-export default App
+
